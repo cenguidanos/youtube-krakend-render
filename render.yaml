@@ -1,5 +1,4 @@
 services:
-  # Krakend Gateway
   - type: web
     name: gateway
     env: docker
@@ -10,7 +9,7 @@ services:
     dockerContext: ./proxy
     healthCheckPath: /__health
     numInstances: 2
-  # Microservice 1
+
   - type: pserv
     name: microservice-1
     env: docker
@@ -26,7 +25,7 @@ services:
         value: 10000
       - key: HOST
         value: "0.0.0.0"
-  # Microservice 2
+
   - type: pserv
     name: microservice-2
     env: docker
@@ -42,7 +41,7 @@ services:
         value: 10000
       - key: HOST
         value: "0.0.0.0"
-  # Microservice 3
+
   - type: pserv
     name: microservice-3
     env: docker
@@ -58,7 +57,7 @@ services:
         value: 10000
       - key: HOST
         value: "0.0.0.0"
-  # Microservice 4
+
   - type: pserv
     name: microservice-4
     env: docker
