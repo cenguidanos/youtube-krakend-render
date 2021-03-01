@@ -1,12 +1,12 @@
 services:
 - type: web
-  name: gateway-proxy
+  name: gateway
   env: docker
   region: frankfurt
   plan: starter
   branch: main
-  dockerfilePath: ./gateway-proxy/Dockerfile
-  dockerContext: ./gateway-proxy
+  dockerfilePath: ./proxy/Dockerfile
+  dockerContext: ./proxy
   healthCheckPath: /__health
   numInstances: 2
 - type: pserv
@@ -15,8 +15,8 @@ services:
   region: frankfurt
   plan: starter
   branch: main
-  dockerfilePath: ./microservices/microservice-1/Dockerfile
-  dockerContext: ./microservices/microservice-1
+  dockerfilePath: ./services/microservice-1/Dockerfile
+  dockerContext: ./services/microservice-1
   healthCheckPath: /__health
   numInstances: 2
   envVars:
@@ -30,8 +30,8 @@ services:
   region: frankfurt
   plan: starter
   branch: main
-  dockerfilePath: ./microservices/microservice-2/Dockerfile
-  dockerContext: ./microservices/microservice-2
+  dockerfilePath: ./services/microservice-2/Dockerfile
+  dockerContext: ./services/microservice-2
   healthCheckPath: /__health
   numInstances: 2
   envVars:
@@ -45,8 +45,8 @@ services:
   region: frankfurt
   plan: starter
   branch: main
-  dockerfilePath: ./microservices/microservice-3/Dockerfile
-  dockerContext: ./microservices/microservice-3
+  dockerfilePath: ./services/microservice-3/Dockerfile
+  dockerContext: ./services/microservice-3
   healthCheckPath: /__health
   numInstances: 2
   envVars:
@@ -60,8 +60,8 @@ services:
   region: frankfurt
   plan: starter
   branch: main
-  dockerfilePath: ./microservices/microservice-4/Dockerfile
-  dockerContext: ./microservices/microservice-4
+  dockerfilePath: ./services/microservice-4/Dockerfile
+  dockerContext: ./services/microservice-4
   healthCheckPath: /__health
   numInstances: 2
   envVars:
