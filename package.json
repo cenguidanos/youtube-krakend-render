@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Project for youtube tutorial",
   "scripts": {
-    "postinstall": "husky install",
     "format": "prettier --write ."
   },
   "repository": {
@@ -22,7 +21,6 @@
   },
   "homepage": "https://github.com/cenguidanos/youtube-krakend-render#readme",
   "devDependencies": {
-    "husky": "5.1.2",
     "prettier": "2.2.1"
   }
 }
