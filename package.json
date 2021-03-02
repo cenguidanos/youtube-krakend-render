@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Project for youtube tutorial",
   "scripts": {
+    "postinstall": "husky install",
     "format": "prettier --write ."
   },
   "repository": {
@@ -23,8 +24,5 @@
   "devDependencies": {
     "husky": "5.1.2",
     "prettier": "2.2.1"
-  },
-  "husky": {
-    "pre-commit": "npm run format"
   }
 }
