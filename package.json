@@ -1,0 +1,30 @@
+{
+  "name": "youtube-krakend-render",
+  "version": "1.0.0",
+  "description": "Project for youtube tutorial",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cenguidanos/youtube-krakend-render.git"
+  },
+  "keywords": [
+    "krakend",
+    "proxy",
+    "nestjs",
+    "render"
+  ],
+  "author": "Cristian Enguidanos Nebot",
+  "bugs": {
+    "url": "https://github.com/cenguidanos/youtube-krakend-render/issues"
+  },
+  "homepage": "https://github.com/cenguidanos/youtube-krakend-render#readme",
+  "devDependencies": {
+    "husky": "5.1.2",
+    "prettier": "2.2.1"
+  },
+  "husky": {
+    "pre-commit": "npm run format"
+  }
+}

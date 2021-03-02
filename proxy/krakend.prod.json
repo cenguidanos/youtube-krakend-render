@@ -1,69 +1,61 @@
 {
-    "version": 2,
-    "name": "API Gateway Youtube v1",
-    "port": "8080",
-    "cache_ttl": "3600s",
-    "timeout": "3s",
-    "output_encoding": "json",
-    "endpoints": [
+  "version": 2,
+  "name": "API Gateway Youtube v1",
+  "port": "8080",
+  "cache_ttl": "3600s",
+  "timeout": "3s",
+  "output_encoding": "json",
+  "endpoints": [
+    {
+      "endpoint": "/healhz",
+      "method": "GET",
+      "concurrent_calls": 3,
+      "backend": [
         {
-            "endpoint": "/healhz",
-            "method": "GET",
-            "concurrent_calls": 3,
-            "backend": [
-                {
-                    "encoding": "string",
-                    "url_pattern": "/__health",
-                    "host": [
-                        "http://microservice-1:10000"
-                    ],
-                    "group": "microservice-1",
-                    "extra_config": {
-                        "github.com/devopsfaith/krakend/http": {
-                            "return_error_details": "microservice_1"
-                        }
-                    }
-                },
-                {
-                    "encoding": "string",
-                    "url_pattern": "/__health",
-                    "host": [
-                        "http://microservice-2:10000"
-                    ],
-                    "group": "microservice-2",
-                    "extra_config": {
-                        "github.com/devopsfaith/krakend/http": {
-                            "return_error_details": "microservice_2"
-                        }
-                    }
-                },
-                {
-                    "encoding": "string",
-                    "url_pattern": "/__health",
-                    "host": [
-                        "http://microservice-3:10000"
-                    ],
-                    "group": "microservice-3",
-                    "extra_config": {
-                        "github.com/devopsfaith/krakend/http": {
-                            "return_error_details": "microservice_3"
-                        }
-                    }
-                },
-                {
-                    "encoding": "string",
-                    "url_pattern": "/__health",
-                    "host": [
-                        "http://microservice-4:10000"
-                    ],
-                    "group": "microservice-4",
-                    "extra_config": {
-                        "github.com/devopsfaith/krakend/http": {
-                            "return_error_details": "microservice_4"
-                        }
-                    }
-                }
-            ]
+          "encoding": "string",
+          "url_pattern": "/__health",
+          "host": ["http://microservice-1:10000"],
+          "group": "microservice-1",
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details": "microservice_1"
+            }
+          }
+        },
+        {
+          "encoding": "string",
+          "url_pattern": "/__health",
+          "host": ["http://microservice-2:10000"],
+          "group": "microservice-2",
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details": "microservice_2"
+            }
+          }
+        },
+        {
+          "encoding": "string",
+          "url_pattern": "/__health",
+          "host": ["http://microservice-3:10000"],
+          "group": "microservice-3",
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details": "microservice_3"
+            }
+          }
+        },
+        {
+          "encoding": "string",
+          "url_pattern": "/__health",
+          "host": ["http://microservice-4:10000"],
+          "group": "microservice-4",
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details": "microservice_4"
+            }
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

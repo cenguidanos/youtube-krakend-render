@@ -1,71 +1,71 @@
 services:
-- type: web
-  name: gateway
-  env: docker
-  region: frankfurt
-  plan: starter
-  branch: main
-  dockerfilePath: ./proxy/Dockerfile
-  dockerContext: ./proxy
-  healthCheckPath: /__health
-  numInstances: 2
-- type: pserv
-  name: microservice-1
-  env: docker
-  region: frankfurt
-  plan: starter
-  branch: main
-  dockerfilePath: ./services/microservice-1/Dockerfile
-  dockerContext: ./services/microservice-1
-  healthCheckPath: /__health
-  numInstances: 2
-  envVars:
-  - key: PORT
-    value: 10000
-  - key: HOST
-    value: "0.0.0.0"
-- type: pserv
-  name: microservice-2
-  env: docker
-  region: frankfurt
-  plan: starter
-  branch: main
-  dockerfilePath: ./services/microservice-2/Dockerfile
-  dockerContext: ./services/microservice-2
-  healthCheckPath: /__health
-  numInstances: 2
-  envVars:
-  - key: PORT
-    value: 10000
-  - key: HOST
-    value: "0.0.0.0"
-- type: pserv
-  name: microservice-3
-  env: docker
-  region: frankfurt
-  plan: starter
-  branch: main
-  dockerfilePath: ./services/microservice-3/Dockerfile
-  dockerContext: ./services/microservice-3
-  healthCheckPath: /__health
-  numInstances: 2
-  envVars:
-  - key: PORT
-    value: 10000
-  - key: HOST
-    value: "0.0.0.0"
-- type: pserv
-  name: microservice-4
-  env: docker
-  region: frankfurt
-  plan: starter
-  branch: main
-  dockerfilePath: ./services/microservice-4/Dockerfile
-  dockerContext: ./services/microservice-4
-  healthCheckPath: /__health
-  numInstances: 2
-  envVars:
-  - key: PORT
-    value: 10000
-  - key: HOST
-    value: "0.0.0.0"
+  - type: web
+    name: gateway
+    env: docker
+    region: frankfurt
+    plan: starter
+    branch: main
+    dockerfilePath: ./proxy/Dockerfile
+    dockerContext: ./proxy
+    healthCheckPath: /__health
+    numInstances: 2
+  - type: pserv
+    name: microservice-1
+    env: docker
+    region: frankfurt
+    plan: starter
+    branch: main
+    dockerfilePath: ./services/microservice-1/Dockerfile
+    dockerContext: ./services/microservice-1
+    healthCheckPath: /__health
+    numInstances: 2
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: '0.0.0.0'
+  - type: pserv
+    name: microservice-2
+    env: docker
+    region: frankfurt
+    plan: starter
+    branch: main
+    dockerfilePath: ./services/microservice-2/Dockerfile
+    dockerContext: ./services/microservice-2
+    healthCheckPath: /__health
+    numInstances: 2
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: '0.0.0.0'
+  - type: pserv
+    name: microservice-3
+    env: docker
+    region: frankfurt
+    plan: starter
+    branch: main
+    dockerfilePath: ./services/microservice-3/Dockerfile
+    dockerContext: ./services/microservice-3
+    healthCheckPath: /__health
+    numInstances: 2
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: '0.0.0.0'
+  - type: pserv
+    name: microservice-4
+    env: docker
+    region: frankfurt
+    plan: starter
+    branch: main
+    dockerfilePath: ./services/microservice-4/Dockerfile
+    dockerContext: ./services/microservice-4
+    healthCheckPath: /__health
+    numInstances: 2
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: '0.0.0.0'
