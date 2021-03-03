@@ -1,0 +1,62 @@
+version: '3.9'
+services:
+  loadbalancer:
+    image: 'haproxy:lts-alpine'
+    volumes:
+      - .:/usr/local/etc/haproxy
+    ports:
+      - 80:80
+      - 3000:3000
+      - 3003:3003
+      - 3006:3006
+      - 3009:3009
+    depends_on:
+      - gateway
+      - microservice1
+      - microservice2
+      - microservice3
+      - microservice4
+  gateway:
+    image: devopsfaith/krakend
+    deploy:
+      replicas: 2
+    ports:
+      - '8000-8001:8080'
+    volumes:
+      - .:/etc/krakend
+  microservice1:
+    build: '../services/microservice-1'
+    deploy:
+      replicas: 2
+    ports:
+      - 3001-3002:80
+    environment:
+      PORT: 80
+      HOST: '0.0.0.0'
+  microservice2:
+    build: '../services/microservice-2'
+    deploy:
+      replicas: 2
+    ports:
+      - 3004-3005:80
+    environment:
+      PORT: 80
+      HOST: '0.0.0.0'
+  microservice3:
+    build: '../services/microservice-3'
+    deploy:
+      replicas: 2
+    ports:
+      - 3007-3008:80
+    environment:
+      PORT: 80
+      HOST: '0.0.0.0'
+  microservice4:
+    build: '../services/microservice-4'
+    deploy:
+      replicas: 2
+    ports:
+      - 3010-3011:80
+    environment:
+      PORT: 80
+      HOST: '0.0.0.0'
